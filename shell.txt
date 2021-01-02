@@ -15,7 +15,7 @@ vi item.sh
 echo 'shell test'
 printf 'shell test'
 
-!wq
+:wq
 
 ----------
 chmod +x item.sh // executable
