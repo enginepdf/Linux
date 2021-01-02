@@ -1,0 +1,17 @@
+touch item.sh
+vi item.sh 
+
+--------- item.sh
+
+#!bin/bash 
+
+echo 'shell test'
+printf 'shell test'
+
+!wq
+
+----------
+chmod +x item.sh // executable
+
+./item.sh
+
