@@ -1,0 +1,10 @@
+// reference : https://inmile.tistory.com/26
+
+소스 코드의 Symbol(전역 변수, 함수, 매크로 정의 등)들의 정보를 모아 tags 파일을 생성하는 tool
+
+sudo apt-get install ctags
+
+ctags -R
+
+vi ~/.vimrc
+set tags= .../tags
