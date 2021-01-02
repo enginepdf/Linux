@@ -1,6 +1,6 @@
 #!/bin/bash
 
-items=('aa' 1)
+items=('aa' 1) # array
 
 items+=(2)
 if [ ${items[1]} == 1 ]
