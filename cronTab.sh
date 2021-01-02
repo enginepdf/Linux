@@ -24,7 +24,11 @@
 # cron logging
 
 * * * * * /home/script/item.sh >> /home/script/item.sh.log 2>&1 # stderr
- 
+
+# >> is for appending
+# > is for stdout
+# cat < item.txt     print the content inside
+
 # 0 # stdin (표준 입력)
 # 1 # stdout (표준 출력)
 # 2 # stderr (에러 출력)
