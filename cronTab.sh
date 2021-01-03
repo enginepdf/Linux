@@ -8,7 +8,7 @@
 
 # crontab -r # delete
 
-# *(minute 0-59) *(hour 0-23) *(day 1-31) *(month 1-12) *(Mon-Sun, Day of the week 0-7)
+# *(minute 0-59) *(hour 0-23) *(day 1-31) *(month 1-12) *(Mon-Sun, Day of the week 0-7, 0 and 7 is Sunday)
 
 * * * * * ./item.sh   #  every minute
 
