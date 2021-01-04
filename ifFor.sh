@@ -3,6 +3,10 @@
 items=('aa' 1) # array
 
 items+=(2)
+# item=(1)
+# items=("${items[@]/$item}")    # remove the item
+# unset item[1] # remove
+
 if [ ${items[1]} == 1 ]
 then
     echo "1 detected"
@@ -19,3 +23,11 @@ done
 # aa
 # 1
 # 2
+
+if []; then
+elif []; then
+else
+fi
+
+while (); do
+done
