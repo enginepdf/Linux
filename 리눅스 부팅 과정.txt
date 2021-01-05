@@ -1,3 +1,32 @@
 // reference : https://itragdoll.tistory.com/3
 // https://ttend.tistory.com/61
+// https://m.blog.naver.com/PostView.nhn?blogId=eva00700&logNo=220150344417&proxyReferer=https:%2F%2Fwww.google.com%2F
+
+1. 시스템 전원 공급
+
+메인보드의 ROM-BIOS에 있는 BIOS 프로그램을 자동 실행
+BIOS 프로그램은 전원공급과 함께  메모리의 특정  번지에 자동 로드
+CPU는 전원 공급과 함께 특정번지의 BIOS 프로그램(명령들)을 자동 실행
+
+2. BIOS(Basic Input/Output System) 단계(Firmware 단계)
+
+자체 진단 기능(POST, Power On Self Test)
+CMOS 검사, CPU, MEMORY, 그래픽 카드, 키보드, 마우스 등 각종 장치들의 이상 유무를 검사하고 이 하드웨어 장치들을 초기화
+부팅 매체 검색과 부트로더 실행
+POST 과정이 이상 없이 진행 완료 시 검색된 부팅 매체(하드디스크, CD-ROM, 플로피 디스크 등)에서 부트로더(GRUB, LILO 등)를 불러 들임
+하드디스크가 부팅 매체로 선택 시, 하드디스크의 부팅 파티션에 있는 0번 섹터(대부분 MBR이라고 함)에 있는 부트로더를 읽어 들임
+부트로더(GRUB)가 메모리 적재되면 BIOS는 종료되고, 시스템 제어권은 부트로더(GRUB)이 갖게 된다.
+
+* GRUB(GRand Unified Bootloader)
+* LILO(LInux  LOader)
+* MBR
+* Firmware : 유저 환경에서 변경될 일이 없는 계산기 프로그램 및 데이터를 갖는 하드웨어
+* CMOS(Complementary Metal-Oxide Semiconductor) : 다른 반도체 소자에 비해 전력의 소비가 극히 적다. 컴퓨터의 전원을 내려도 저장된 것이 지워지지 않게 함
+                                                  하드디스크 등을 추가로 장착하는 등의 경우 CMOS SETUP이 필요
+
+3. 부트 로드(Boot Loader) 단계
+
+4. Kernel 단계
+
+5. Init 단계
 
