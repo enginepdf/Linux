@@ -20,3 +20,5 @@ service iptables restart
 ** SSH service에 대해서 172.16.1.10 IP만 허용
 # iptables -A INPUT -p tcp -s 172.16.1.10 --dport 20 -j ACCEPT       // --sport(Source Port), --dport(Destinatino Port)
 # iptables -A INPUT -p tcp --dport 20 -j DROP
+
+// -A for adding new rule, -p is for protocol, -s is start point, -j is for setting specific policy
