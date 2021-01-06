@@ -18,9 +18,9 @@ POST 과정이 이상 없이 진행 완료 시 검색된 부팅 매체(하드디
 하드디스크가 부팅 매체로 선택 시, 하드디스크의 부팅 파티션에 있는 0번 섹터(대부분 MBR이라고 함)에 있는 부트로더를 읽어 들임
 부트로더(GRUB)가 메모리 적재되면 BIOS는 종료되고, 시스템 제어권은 부트로더(GRUB)이 갖게 된다.
 
-* GRUB(GRand Unified Bootloader)
-* LILO(LInux  LOader)
-* MBR(Master Boot Record) : 마스터 부트 레코드 혹은 파티션 섹터는 파티션된 기억 장치의 첫 섹터인 512바이트 시동 섹터
+* GRUB(GRand Unified Bootloader) : 설정 파일(/boot/grub/menu.lst)
+* LILO(LInux  LOader) : 설정 파일(/etc/lilo.conf)
+* MBR(Master Boot Record) : 마스터 부트 레코드 혹은 파티션 섹터는 파티션된 기억 장치의 첫 섹터인 512바이트 시동 섹터, MBR은 한 개에 OS 이미지 한 개만 저장 가능.
 * Firmware : 유저 환경에서 변경될 일이 없는 계산기 프로그램 및 데이터를 갖는 하드웨어
 * CMOS(Complementary Metal-Oxide Semiconductor) : 다른 반도체 소자에 비해 전력의 소비가 극히 적다. 컴퓨터의 전원을 내려도 저장된 것이 지워지지 않게 함
                                                   하드디스크 등을 추가로 장착하는 등의 경우 CMOS SETUP이 필요
