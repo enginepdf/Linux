@@ -49,6 +49,9 @@ GRUB_DEFAULT
 4. Kernel 단계
 
 /etc/grub/grub.conf 파일에 의해 커널이 메모리상에서 실행되면, 하드웨어를 점검하고 /var/log/dmesg 파일에 기록
+# dmesg | more
+# cat /var/log/dmesg
+
 루트 파일시스템(/)을 읽기 전용으로 마운트(마운트 실패 시 커널 패닉 메시지 출력)
 커널은 swapper 프로세스(PID 0번)를 호출
 swapper(PID 0번)는 커널이 사용할 각 장치 드라이브들을 초기화하고 init 프로세스(PID 1번)가 실행
@@ -59,3 +62,15 @@ swapper(PID 0번)는 커널이 사용할 각 장치 드라이브들을 초기화
 /sbin/init 프로세스가 실행이 되면 /etc/inittab 파일에 정의된 순서에 따라서 시스템을 초기화하기 시작.
 (로그인  프롬프트가  나오는 부팅 완료 화면까지 init 프로세스에 의해 실행)
 
+/etc/rc.d/rc[0-6].d   - runlevel
+
+0 - halt
+1 - single user mode
+2 - multiuser, without NFS
+3 - Full multiuser mode(console mode)
+4 - unused
+5 - X11 (GUI X-Window)
+6 - reboot
+
+
+telinit 6   // reboot
