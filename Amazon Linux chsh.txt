@@ -1,0 +1,12 @@
+// reference : https://blog.ducthinh.net/change-shell-chsh-ec2-amazon-linux-2/
+// https://www.linux.co.kr/home/lecture/index.php?cateNo=&secNo=&theNo=&leccode=246
+
+sudo yum install util-linux-user
+
+sudo chsh -s $(which zsh)
+
+chsh -s /bin/bash
+echo $SHELL   // /bin/bash
+chsh -l
+
+cat /etc/shells
