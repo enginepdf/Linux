@@ -1,0 +1,44 @@
+// reference : https://onecellboy.tistory.com/220
+// https://jongmin92.github.io/2016/12/13/Linux%20&%20Ubuntu/bashrc-bash_profile/
+// https://www.tecmint.com/set-unset-environment-variables-in-linux/
+
+** 시스템 환경변수파일 읽는 순서
+
+etc/rc.d/rc.sysinit
+/etc/rc.d/rcN.d # N은 0-6 사이.
+/etc/rc.d/rc.local
+/etc/profile
+/etc/profile.d/*
+/etc/bashrc
+$HOME/.bash_profile 
+$HOME/.bashrc
+
+ 
+* X 윈도우
+/etc/X11/xinit/xinitrc
+/etc/X11/xinit/Xclient
+/etc/X11/xinit/xinitrc.d/*
+/etc/X11/sysconfig/i18n
+$HOME/.xinitrc
+$HOME/.Xclient
+$HOME/.Xclient-$HOSTNAME 
+
+etc : 모든 유저
+$HOME : 해당 유저
+
+대체로 모든 유저에게 적용 : /etc/profile에 환경변수를 등록
+특정 유저는 : $HOME/.bash_profile에 환경변수를 등록
+
+
+.bashrc : 로그인 한 상태에서 새 터미널 창 열 때마다
+.bash_profile : 시스템에 로그인할 때마다
+.profile : 로그인할 때 로드, 개별 사용자에 대한 설정 코드들 중 bash와는 관계 없는 부분
+
+
+
+vi .bash_profile
+export TEST12=test12 
+source .bash_profile
+echo $TEST12  // test12
+env // TEST12=12
+unset TEST12
