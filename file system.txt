@@ -1,0 +1,7 @@
+df -th
+mount
+cat /etc/fstab
+cat /etc/mtab
+du
+
+* 파일시스템의 용도
