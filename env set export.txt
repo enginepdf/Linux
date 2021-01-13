@@ -1,0 +1,14 @@
+TEST=test 
+echo $TEST
+
+unset TEST
+echo $TEST  // non existent
+
+export TEST1=test1 
+env    // TEST1=test1
+
+
+env TEST2=test2 
+env  // TEST2=test2
+env -u TEST2 
+env // non existent
