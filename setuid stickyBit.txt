@@ -19,13 +19,24 @@ l : Symbolic Link File
 ** setuid
 
 setuid는 해당 파일을 실행하는 동안에만 관리자 권한 부여(관리자 계정이 많으면 해커에 의해 악의적 사용자로 이용당할 수 있음)
---> 시스템에 영향을 줄 수 있는 자주 참조되는 파일을 사용해야하는 일반 사용자
+--> 시스템에 영향을 줄 수 있는 자주 참조되는 파일을 사용해야하는 일반 사용자에게 필요(가급적 사용하지 않는 것이 좋고 시스템에 영향을 주는 파일에 setuid가 적용되어 있으면 해킹을 의심할 수 있음)
 
+sudo useradd -m user1
+sudo passwd user1
+su root
 mkdir items
+chown root:root items
 chmod 0775 items    // drwxrwxr-x
 ls -l
 chmod 4775 items // 4=u+s, S의 경우 실행 권한 없음, drwsrwxr-x     user의 x->s
 
+su user1
+
+ls -al /etc/shadow    // ---------- 1 root root
+chmod 4755 /etc/shadow  // 특정 사용자의 비밀번호 삭제 시 비밀번호 입력 없이 로그인 가능해짐
+
+
 /usr/bin/passwd에 setuid 비트 설정 되어 있음(접근 권한 : 4755)
+
 
 ** sticky bit
