@@ -22,3 +22,6 @@ chmod +x item.sh // executable
 
 ./item.sh
 
+
+
+cat /etc/passwd | grep root     // the shell 'root' uses
