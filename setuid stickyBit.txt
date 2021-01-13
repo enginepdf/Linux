@@ -43,3 +43,13 @@ chmod 4755 /etc/shadow  // 특정 사용자의 비밀번호 삭제 시 비밀번
 
 
 ** sticky bit
+
+다른 사용자가 파일의 삭제를 막기 위한 것으로 other 필드의 실행 권한 변경(x -> t)
+
+mkdir test
+chmod 0777(777) test
+ls -l // drwxrwxrwx
+chmod 1777 test    // sticky bit
+ls -l // drwxrwxrwt
+chmod a-t test
+ls -l // drwxrwxrwx
