@@ -23,12 +23,15 @@ setuid는 해당 파일을 실행하는 동안에만 관리자 권한 부여(관
 
 sudo useradd -m user1
 sudo passwd user1
+tail -n 3 /etc/passwd   // check the user
+
 su root
 mkdir items
 chown root:root items
 chmod 0775 items    // drwxrwxr-x
 ls -l
 chmod 4775 items // 4=u+s, S의 경우 실행 권한 없음, drwsrwxr-x     user의 x->s
+chmod a-s items // remove setuid
 
 su user1
 
