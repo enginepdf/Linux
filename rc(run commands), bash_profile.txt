@@ -40,5 +40,5 @@ vi .bash_profile
 export TEST12=test12 
 source .bash_profile
 echo $TEST12  // test12
-env // TEST12=12
+env // TEST12=test12
 unset TEST12
