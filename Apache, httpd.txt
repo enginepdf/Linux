@@ -1,0 +1,15 @@
+* Reference 
+
+http://dveamer.github.io/backend/InstallApacheHttpd.html
+https://ko.wikipedia.org/wiki/Httpd
+https://ko.wikipedia.org/wiki/%EC%95%84%ED%8C%8C%EC%B9%98_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4_%EC%9E%AC%EB%8B%A8
+
+* Apache Software Foundation(ASF)는 아파치 HTTP 서버를 포함한 아파치 소프트웨어 프로젝트를 지원하는 비영리 재단
+
+* Httpd
+
+    Apache에서 만든 HTTP Server Project의 결과물이 Httpd(HTTP Daemon)  
+    Web Server 역할 하는 Middleware
+    Load-balancing, health-check
+    웹 서버의 백그라운드에서 실행되어, 들어오는 서버 요청을 대기하는 소프트웨어 프로그램
+    이 데몬은 자동으로 요청에 응답하며 HTTP를 사용하여 인터넷을 경유, 하이퍼텍스트, 멀티미디오 문서 서비스
