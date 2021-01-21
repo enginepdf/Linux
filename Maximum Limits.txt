@@ -1,0 +1,14 @@
+* reference 
+https://wilsonmar.github.io/maximum-limits/
+https://www.lesstif.com/lpt/linux-increase-the-max-open-files-per-user-48103542.html
+
+OSs have settings which limit the number of files and processes that are allowed to be open to protects the system from being overrun
+
+
+ulimit -n // limit of file descriptors.   file descriptor : 시스템으로부터 할당 받은 파일이나 소켓을 대표하는 정수
+
+ulimit -u //  limit of processes
+
+launchctl limit maxfiles  // mac
+
+cat /proc/sys/fs/file-max  // Centos
