@@ -1,7 +1,14 @@
-df -th
-mount
-cat /etc/fstab
-cat /etc/mtab
-du
-
+df [option] // Disk Free, cat /bin/df
+                          -h is for human-readable like 1K, 512M
+                          -i is for inodes information
+                          -t is for
+mount  // 재부팅 시 설정 초기화
+cat /etc/fstab   // 부팅시 마운트, 설정 영구 적용
+cat /etc/mtab  // 현재 마운트 되어 있는 정보
+cat /proc/mounts   // 마운트 된 모든 파일 시스템 상태 정보
+fuser -cu  // -c is for PID, u for username
+      -ck  // -k for stopping process
+du   // Disk Usage, -h is for human-readable like 1K, 512M
+                    -i is for inodes information
+                    -k is for KB unit
 * 파일시스템의 용도
