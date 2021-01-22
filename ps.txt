@@ -1,0 +1,11 @@
+Process State
+
+ps -ef  // -e for writing information to standard output about all processes, except kernel processes
+           -f for generating a full listing including PPID, UID, PID etc
+           -A for writing to standard output information about all processes
+
+ps -ef | grep 'process name'
+ps aux | grep 'process name'   // on running processes
+
+ps -ef | more
+ps -fp [PID]
