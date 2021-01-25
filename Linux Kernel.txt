@@ -1,0 +1,11 @@
+* reference 
+
+https://love-yourself.tistory.com/6?category=692819
+https://www.sosconhistory.net/2015/download/day28/ST3/S_28_1000_%EC%A1%B0%EB%A7%8C%EC%84%9D.pdf
+https://jihooyim1.gitbooks.io/linuxbasic/content/contents/01.html
+
+GNU(General Public License)
+/usr/src/linux
+http://www.kernel.org
+
+KLM(Loadable Kernel Module)
