@@ -13,3 +13,35 @@ https://ko.wikipedia.org/wiki/%EC%95%84%ED%8C%8C%EC%B9%98_%EC%86%8C%ED%94%84%ED%
     Load-balancing, health-check
     웹 서버의 백그라운드에서 실행되어, 들어오는 서버 요청을 대기하는 소프트웨어 프로그램
     이 데몬은 자동으로 요청에 응답하며 HTTP를 사용하여 인터넷을 경유, 하이퍼텍스트, 멀티미디오 문서 서비스
+
+
+yum -y install httpd
+
+systemctl start httpd
+systemctl status httpd
+systemctl enable httpd // auto start on boot
+
+systemctl is-enalbed httpd  // enabled
+netstat -lntup | grep http
+curl localhost:80 
+
+ls /etc/httpd/conf  // httpd.conf 
+
+vi httpd.conf
+
+```httpd.conf
+
+###
+DocumentRoot "/var/www/html"
+
+```
+
+// echo "Does this work?? $(hostname -f)" > /var/www/html/index.html
+
+cd /var/www/html/
+
+html]# echo "Does this work? $(hostname -f)" > index.html   
+
+html]# ls  // index.html
+
+/index.html    // Does this work?
