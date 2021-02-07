@@ -1,5 +1,6 @@
 Reference :
 https://linoxide.com/linux-command/linux-lsblk-command/
+https://man7.org/linux/man-pages/man5/fstab.5.html
 
 df [option] // Disk Free, cat /bin/df
                           -h is for human-readable like 1K, 512M
@@ -36,4 +37,57 @@ sudo mkdir /mount_point   // create a mount point directory for the volume. moun
 
 sudo mount /dev/xvdb /mount_point   // mount the volume at the location you just created
 
-lsblk  // xvb disk /mount_point
+lsblk  // xvdb disk /mount_point
+
+sudo cp /etc/fstab /etc/fstab.orig     // Elastic Block Store, EBS
+
+sudo nano(vim) /etc/fstab
+
+```/etc/fstab
+
+/dev/xvdb /mount_point ext defaults,nofail 0 2
+
+```
+
+sudo file -s /dev/xvdb    // /dev/xvdb: Linux rev 1.0 ext
+
+sudo umount /mount_point
+
+lsblk
+
+sudo mount -a  // mount all file systems on fstab
+
+
+* fstab - static information about the filesystems
+
+The first field (fs_spec).
+              This field describes the block special device, remote
+              filesystem or filesystem image for loop device to be
+              mounted or swap file or swap partition to be enabled
+
+The second field (fs_file).
+              This field describes the mount point (target) for the
+              filesystem
+
+The third field (fs_vfstype).
+              This field describes the type of the filesystem.  Linux
+              supports many filesystem types: ext4, xfs, btrfs, f2fs,
+              vfat, ntfs, hfsplus, tmpfs, sysfs, proc, iso9660, udf,
+              squashfs, nfs, cifs, and many more
+
+The fourth field (fs_mntops).
+              This field describes the mount options associated with the
+              filesystem.
+              It is formatted as a comma-separated list of options - defaults, noauto, user, owner, comment, nofail
+
+The fifth field (fs_freq).
+              This field is used by dump(8) to determine which
+              filesystems need to be dumped.  Defaults to zero (don't
+              dump) if not present
+
+The sixth field (fs_passno).
+              This field is used by fsck(8) to determine the order in
+              which filesystem checks are done at boot time.  The root
+              filesystem should be specified with a fs_passno of 1.
+              Other filesystems should have a fs_passno of 2.
+              Defaults to zero (don't fsck) if not present
