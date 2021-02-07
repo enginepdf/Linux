@@ -1,3 +1,6 @@
+Reference :
+https://linoxide.com/linux-command/linux-lsblk-command/
+
 df [option] // Disk Free, cat /bin/df
                           -h is for human-readable like 1K, 512M
                           -i is for inodes information
@@ -12,3 +15,25 @@ du   // Disk Usage, -h is for human-readable like 1K, 512M
                     -i is for inodes information
                     -k is for KB unit
 * 파일시스템의 용도
+
+
+
+
+lsblk  // NAME MAJ:MIN RM RO SIZE TYPE MOUNTPOINT
+          NAME: This is the device name
+          MAJ:MIN: This column shows the major and minor device number.
+          RM: This column shows whether the device is removable or not. Note in this example the device sdb and sr0 have their RM values equals to 1 indicating they are removable
+          RO: This indicates whether a device is read-only. In this case all devices have a RO=0, indicating they are not read only
+          SIZE: This is column give information on the size of the device
+          TYPE: This column shows information whether the block device is a disk or a partition(part) within a disk. disks, read-only memory(rom)
+          MOUNTPOINT: This column indicates mount point on which the device is mounted
+
+sudo file -s /dev/xvdb   // check file system TYPE
+
+sudo mkfs -t ext /dev/xvdb   // format the volume
+
+sudo mkdir /mount_point   // create a mount point directory for the volume. mount point is where the volume is located in the file system tree and where you read and write files to after you mount the volume
+
+sudo mount /dev/xvdb /mount_point   // mount the volume at the location you just created
+
+lsblk  // xvb disk /mount_point
