@@ -1,6 +1,7 @@
 Reference :
 https://linoxide.com/linux-command/linux-lsblk-command/
 https://man7.org/linux/man-pages/man5/fstab.5.html
+https://hongths.tistory.com/16
 
 df [option] // Disk Free, cat /bin/df
                           -h is for human-readable like 1K, 512M
@@ -15,7 +16,29 @@ fuser -cu  // -c is for PID, u for username
 du   // Disk Usage, -h is for human-readable like 1K, 512M
                     -i is for inodes information
                     -k is for KB unit
-* 파일시스템의 용도
+
+
+* 리눅스 파일시스템 디렉토리별 용도
+
+      / : root
+      /bin : 바이너리 디렉토리, 사용자 수준 GNU 유틸리티 저장
+      /boot : 부팅 파일
+      /dev : 장치 디렉토리, 리눅스가 장치 노드 생성
+      /etc : 시스템 구성파일 
+      /home : 홈, 사용자 디렉토리
+      /lib: 시스템 및 애플리케이션 라이브러리 파일 저장
+      /media : 이동식 미디어에 사용되는 마운트 포인트를 위한 공통 장소
+      /mnt : 이동식 미디어에 사용되는 마운트 포인트를 위한 또다른 공통 장소
+      /opt : 타사 소프트웨어 패키지, 데이터 파일 저장하기 위해 자주 쓰임
+      /proc : 현재 하드웨어와 프로세스 정보 저장
+      /root : 루트 홈 디렉토리
+      /sbin : 시스템 바이너리 디렉토리, 많은 관리자 수준 GNU 유틸리티 저장
+      /run : 실행 디렉토리, 시스템 구동되는 동안 런타임 데이터 보유
+      /srv : 로컬 서비스가 파일을 저장
+      /sys : 시스템 하드웨어 정보 파일 저장
+      /tmp : 임시 작업 파일 만들고 없앰
+      /usr : 사용자 바이너리 디렉토리, 수많은 사용자 수준 GNU 유틸리티 및 데이터 파일 저장
+      /var : 로그 파일과 같이 자주 변경되는 파일을 위한 장소
 
 
 
@@ -60,32 +83,32 @@ sudo mount -a  // mount all file systems on fstab
 
 * fstab - static information about the filesystems
 
-The first field (fs_spec).
+      The first field (fs_spec).
               This field describes the block special device, remote
               filesystem or filesystem image for loop device to be
               mounted or swap file or swap partition to be enabled
 
-The second field (fs_file).
+      The second field (fs_file).
               This field describes the mount point (target) for the
               filesystem
 
-The third field (fs_vfstype).
+      The third field (fs_vfstype).
               This field describes the type of the filesystem.  Linux
               supports many filesystem types: ext4, xfs, btrfs, f2fs,
               vfat, ntfs, hfsplus, tmpfs, sysfs, proc, iso9660, udf,
               squashfs, nfs, cifs, and many more
 
-The fourth field (fs_mntops).
+      The fourth field (fs_mntops).
               This field describes the mount options associated with the
               filesystem.
               It is formatted as a comma-separated list of options - defaults, noauto, user, owner, comment, nofail
 
-The fifth field (fs_freq).
+      The fifth field (fs_freq).
               This field is used by dump(8) to determine which
               filesystems need to be dumped.  Defaults to zero (don't
               dump) if not present
 
-The sixth field (fs_passno).
+      The sixth field (fs_passno).
               This field is used by fsck(8) to determine the order in
               which filesystem checks are done at boot time.  The root
               filesystem should be specified with a fs_passno of 1.
