@@ -1,0 +1,10 @@
+yum list installed
+
+yum list installed | more
+
+yum list installed | grep 'keyword'
+
+grep(global / regular expression / print)
+
+grep [OPTIONs] Pattern [FILE]  -F for PATTERN을 정규 표현식(RegEx)이 아닌 일반 문자열로 해석
+                               -q for 검색 결과 출력하지 않음.

@@ -1,5 +1,0 @@
-yum list installed
-
-yum list installed | more
-
-yum list installed | grep 'keyword'
