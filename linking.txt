@@ -1,0 +1,19 @@
+Symbolic Link
+
+    ln -s FILE LINK
+
+        ln -s /etc/a.ini /etc/a.conf
+        ln -s /etc/a.cnf /etc/b.conf
+
+            ls -l /etc/a.conf  //   /etc/a.conf -> /etc/a.ini
+            ls -l /etc/b.conf  //   /etc/b.conf -> /etc/a.cnf
+
+        ln -s /usr/data1/data2/item item
+        ls -l item  // item -> /usr/data1/data2/item    // long path becomes short
+        pwd -L   //   /root/item
+        pwd -P   //   /usr/data1/data2/item
+
+
+Hard Link
+
+    ln FILE LINK
