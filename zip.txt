@@ -1,0 +1,7 @@
+touch test.txt
+mkdir tests
+
+zip -r test.zip ./test
+zip test.zip test.txt // add test.txt to test.zip which already exists
+echo "state" > test.txt
+zip test.zip test.txt  // overwritten
