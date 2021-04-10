@@ -17,19 +17,19 @@ Symbolic Link
         echo "tests_a" > ./tests/tests-depth1/a
         echo "tests_b" > ./tests/tests-depth1/b
         
-        ln -s /tests/tests-depth1 test   // long path becomes short
+        ln -s ./tests/tests-depth1 test   // long path becomes short       ln -s tests/tests-depth1 ./test (o)   ln -s /tests/tests-depth1 test (x)
         ls -l  // test -> ./tests/tests-depth1
         cd test
         ls   // a b
         pwd -L   //   /test
         pwd -P   //   /tests/tests-depth1
 
-        echo "test_c" > c
+        echo "tests_c" > c
         ls  // a b c
         cd ..
         cd tests/tests-depth1
         ls  // a b c
-        cat c // test_c
+        cat c // tests_c
         cd ..
         cd ..
         unlink test  
