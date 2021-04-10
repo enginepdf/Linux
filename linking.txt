@@ -8,11 +8,31 @@ Symbolic Link
             ls -l /etc/a.conf  //   /etc/a.conf -> /etc/a.ini
             ls -l /etc/b.conf  //   /etc/b.conf -> /etc/a.cnf
 
-        ln -s /usr/data1/data2/item item
-        ls -l item  // item -> /usr/data1/data2/item    // long path becomes short
-        pwd -L   //   /root/item
-        pwd -P   //   /usr/data1/data2/item
+        mkdir tests
+        mkdir test
+        cd tests
+        mkdir tests-depth1
+        cd ..
 
+        echo "tests_a" > ./tests/tests-depth1/a
+        echo "tests_b" > ./tests/tests-depth1/b
+        
+        ln -s /tests/tests-depth1 test   // long path becomes short
+        ls -l  // test -> ./tests/tests-depth1
+        cd test
+        ls   // a b
+        pwd -L   //   /test
+        pwd -P   //   /tests/tests-depth1
+
+        echo "test_c" > c
+        ls  // a b c
+        cd ..
+        cd tests/tests-depth1
+        ls  // a b c
+        cat c // test_c
+        cd ..
+        cd ..
+        unlink test  
 
 Hard Link
 
