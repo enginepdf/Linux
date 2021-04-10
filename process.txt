@@ -1,0 +1,21 @@
+Process State
+
+    ps -ef  // -e for writing information to standard output about all processes, except kernel processes
+               -f for generating a full listing including PPID(Parent Process ID), UID(User ID), PID(Process ID) etc
+               -A for writing to standard output information about all processes
+               -L for thread information(LWP - Light Weight Process, is thread : 쓰레드 고유 아이디
+                                         NLWP - Number Light Weight Process : 해당 프로세스에서 동작하는 쓰레드의 총 갯수)
+               -T for thread information with SPID(=LWP, TID(Thread ID))
+               -m for thread information after each process information
+
+    ps -ef | grep 'process name'
+    ps aux | grep 'process name'   // on running processes
+
+    ps -ef | more
+    ps -fp [PID]
+
+strace -p [Thread ID : LWP]   // system functions the Thread runs
+
+sudo lsof -i :"Port number"  // 특정 포트를 사용 중인 프로세스 확인
+kill -9 `lsof -i:5000 | grep "node"|awk '{print $2}'`  // 5000번 포트를 사용 중인 프로세스의 정보 중 node라는 출력을 가진 행의 두번째 열의 번호로 프로세스 종료
+                                                       // kill -9 `pgrep -f node`
