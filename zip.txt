@@ -1,7 +1,11 @@
 touch test.txt
 mkdir tests
 
-zip -r test.zip ./test
+zip -r test.zip ./tests
 zip test.zip test.txt // add test.txt to test.zip which already exists
-echo "state" > test.txt
+echo "test comment" > test.txt
 zip test.zip test.txt  // overwritten
+
+rm -rf test.txt tests
+unzip test.zip
+cat test.txt  // test comment
