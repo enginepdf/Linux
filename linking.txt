@@ -9,7 +9,6 @@ Symbolic Link
             ls -l /etc/b.conf  //   /etc/b.conf -> /etc/a.cnf
 
         mkdir tests
-        mkdir test
         cd tests
         mkdir tests-depth1
         cd ..
@@ -32,8 +31,26 @@ Symbolic Link
         cat c // tests_c
         cd ..
         cd ..
+        rm -rf ./tests/tests-depth1/c
+        ls test/    // a b
         unlink test  
 
 Hard Link
 
-    ln FILE LINK
+    ln FILE(not directory) LINK
+
+        mkdir tests
+        cd tests
+        mkdir tests-depth1
+        cd ..
+
+        echo "tests_a" > ./tests/tests-depth1/a
+        echo "tests_b" > ./tests/tests-depth1/b
+
+        ln ./tests/tests-depth1/a test
+        cat test  // tests_a
+        ls -l ./tests/tests-depth1/    // -rw-r--r--  2 user staff  8 DAY a
+                                       // -rw-r--r--  1 user staff  8 DAY b
+        rm -rf ./tests/tests-depth1/a  
+        cat test // tests_a
+        unlink test
