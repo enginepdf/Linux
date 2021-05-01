@@ -6,6 +6,19 @@ reference
     https://unix.stackexchange.com/questions/89386/what-is-symbol-and-in-unix-linux
     https://stackoverflow.com/questions/35917552/what-does-the-syntax-mean-in-shell-language
     https://bashitout.com/2013/05/18/Ampersands-on-the-command-line.html
+    https://en.wikipedia.org/wiki/File_descriptor
+
+
+File descriptor
+
+    In Unix and Unix-like computer operating systems, a file descriptor (FD, less frequently fildes) 
+    is a unique identifier (handle) for a file or other input/output resource, such as a pipe or network socket.
+
+    File descriptors typically have non-negative integer values, with negative values being reserved to indicate "no value" or error conditions.
+
+        0 : Standard input
+        1 : Standard output
+        2 : Standard error
 
 
 && (AND)
@@ -27,6 +40,14 @@ reference
     is connected to command2’s standard input through the pipe; it is shorthand for 2>&1 |.
 
         '|&' is the same as '2>&1'
+
+
+* There  are  two  formats  for  redirecting standard output and standard error:
+
+    '&>word'    '>&word'
+
+      Of the two forms, the first is preferred.  
+      This is semantically equivalent to '>word 2>&1'
 
 
 &>
@@ -51,3 +72,25 @@ command1 & command2 & command3
     three commands run at the same time, in separate sub-shells. 
     Their stdout will still be attached to the parent shell, so if running this from a Linux terminal, 
     you will still see the outputs
+
+
+``` ampersand.sh
+
+{ echo stdout; echo stderr >&2; }
+
+    # stdout
+    # stderr
+
+{ echo stdout; echo stderr >&2; } >/dev/null 
+
+    # stderr
+
+{ echo stdout; echo stderr >&2; } >/dev/null 2>&1  
+
+    #
+
+{ echo stdout; echo stderr >&2; } 2>&1 >/dev/null  
+
+    # stderr
+
+```
