@@ -1,0 +1,53 @@
+reference 
+
+    https://stackoverflow.com/questions/13338870/what-does-at-the-end-of-a-linux-command-mean
+    https://stackoverflow.com/questions/35384999/what-does-mean-in-bash
+    https://stackoverflow.com/questions/24793069/what-does-do-in-bash
+    https://unix.stackexchange.com/questions/89386/what-is-symbol-and-in-unix-linux
+    https://stackoverflow.com/questions/35917552/what-does-the-syntax-mean-in-shell-language
+    https://bashitout.com/2013/05/18/Ampersands-on-the-command-line.html
+
+
+&& (AND)
+
+    command1; command2   # even if command1 fails, command2 to be executed
+
+    command1 && command2  # only if command1 succeeded, command2 would be executed
+
+
+.. & (at the end of a command)
+
+    If a command is terminated by the control operator &, the shell executes the command 
+    in the background in a subshell. The shell does not wait for the command to finish, and the return status is 0.
+
+
+|&
+
+    If ‘|&’ is used, command1’s standard error, in addition to its standard output, 
+    is connected to command2’s standard input through the pipe; it is shorthand for 2>&1 |.
+
+        '|&' is the same as '2>&1'
+
+
+&>
+
+    &>name is the same as >name 2>&1
+
+
+>&
+
+    2>&1 redirects the standard error to the standard output so they appear together 
+    and can be jointly redirected to a file
+
+
+\&
+
+    escape '&'
+    echo a \& b  # a & b
+
+
+command1 & command2 & command3
+
+    three commands run at the same time, in separate sub-shells. 
+    Their stdout will still be attached to the parent shell, so if running this from a Linux terminal, 
+    you will still see the outputs
