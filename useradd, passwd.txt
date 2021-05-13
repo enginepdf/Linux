@@ -1,0 +1,15 @@
+useradd -c "${FULLNAME}" -m USERNAME  #  -c : comment, -m : --create-home. Create the user's home directory if it does not exist.
+
+echo ${PASSWORD} | passwd --stdin ${USERNAME}
+
+passwd -e ${USERNAME} 
+
+
+
+man passwd
+
+     OPTIONS
+
+         -e, --expire
+
+            This is a quick way to expire a password for an account. the user will be forced to change the password during the next login attempt. Available to root only.
