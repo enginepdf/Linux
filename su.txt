@@ -1,0 +1,37 @@
+Reference
+
+    https://en.wikipedia.org/wiki/Su_(Unix)
+
+
+su(substitute user)
+
+    The Unix command su, which stands for substitute user, is used by a computer user to execute commands with the privileges of another user account
+    to finish the mode, use 'exit'
+
+
+su USER # su === su root
+
+su -  # === su -l root === su -login root
+
+    When used with a hyphen (su -) it can be used to start a login shell. In this mode users can assume the user environment of the target user.
+
+su - USER # === su -l USER
+
+
+``` example.sh
+
+check=1
+
+su 
+
+echo $check  # 1 
+
+exit
+
+    logout
+
+su -
+
+echo $check
+
+```
