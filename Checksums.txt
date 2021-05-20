@@ -1,0 +1,17 @@
+Reference
+
+    https://wiki.centos.org/TipsAndTricks/sha256sum
+
+Errors can occur during the download of CentOS ISOs, even if your download manager reports none. 
+Therefore it is very important to check that the files have not been corrupted in any way. 
+This is the purpose of the CHECKSUM files (md5sum.txt.asc, sha1sum.txt.asc, sha256sum.txt.asc) we include in the iso directory
+
+    .asc(Action Script Communication)
+
+sha256sum <name>.iso
+
+touch test.txt
+
+md5 test.txt
+
+    MD5 (test.txt) = d41d8cd98f00b204e9800998ecf8427e
