@@ -15,3 +15,9 @@ touch test.txt
 md5 test.txt
 
     MD5 (test.txt) = d41d8cd98f00b204e9800998ecf8427e
+
+echo "new data" >> test.txt
+
+md5 test.txt
+
+    MD5 (test.txt) = 59b70c14284c1ae6980fd52412229d7f
