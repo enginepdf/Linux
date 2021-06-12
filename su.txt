@@ -13,7 +13,7 @@ su USER # su === su root
 
 su -  # === su -l root === su -login root
 
-    When used with a hyphen (su -) it can be used to start a login shell. In this mode users can assume the user environment of the target user.
+    When used with a hyphen (su -) it can be used to start a login shell. In this mode users can assume the user environment of the target user(.bashrc, .profile in /home)
 
 su - USER # === su -l USER
 
