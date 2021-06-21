@@ -17,17 +17,27 @@ for i in ${items[@]}; do
     echo ${items[i]}
 done
 
-# ./if.sh
+# ./ifForWhile.sh
 # 1 detected
 # aa 1 2
 # aa
 # 1
 # 2
 
-if []; then
-elif []; then
-else
-fi
+# if []; then
+# elif []; then
+# else
+# fi
 
-while (); do
+while [[ "${#}" -gt 0 ]]
+do
+  echo "the number of arguments: ${#}"
+  echo "argument 1: $1"
+  shift  # === shift 1
 done
+
+# ./ifForWhile.sh item1 item2
+# the number of arguments: 2
+# argument 1: item1
+# the number of arguments: 1
+# argument 1: item2
