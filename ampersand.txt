@@ -20,6 +20,8 @@ File descriptor
         1 : Standard output
         2 : Standard error
 
+            1> 2> redirects explicitly to stdout and stderr each
+
 
 && (AND)
 
@@ -74,22 +76,53 @@ command1 & command2 & command3
     you will still see the outputs
 
 
+
 ``` ampersand.sh
 
-{ echo stdout; echo stderr >&2; }
+{ echo stdout; echo stderr >&2; }  # stdout and stderr as stderr
 
     # stdout
     # stderr
 
-{ echo stdout; echo stderr >&2; } >/dev/null 
+{ echo stdout; echo stderr >&2; } > /dev/null  # discard stdout
 
     # stderr
 
-{ echo stdout; echo stderr >&2; } >/dev/null 2>&1  
+{ echo stdout; echo stderr >&2; } > /dev/null 2>&1  # discard stdout and make stderr as stdout
 
     #
 
-{ echo stdout; echo stderr >&2; } 2>&1 >/dev/null  
+{ echo stdout; echo stderr >&2; } 2>&1 > /dev/null   # discard stdout and make stderr as stdout
+
+    # stderr
+
+{ echo stdout; echo stderr >&2; } 1> output 2> error
+
+cat output
+
+    # stdout
+
+cat error
+
+    # stderr
+
+{ echo stdout; echo stderr >&2; } 2>&1 1> output1 2> error1
+
+    # stderr
+
+cat output1
+
+    # stdout
+
+cat error1
+
+    # stderr
+
+{ echo stdout; echo stderr >&2 } 2> error2
+
+    # stdout
+
+cat error2
 
     # stderr
 
