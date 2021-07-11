@@ -1,0 +1,15 @@
+type -a tar 
+
+    tar is /usr/bin/tar 
+
+man tar  
+
+    tar -cf archive.tar foo bar   # -c for create, -f for specifying file name of the output
+    tar -tvf archive.tar  # -t for listing the contents of an archive. -v for verbose 
+    tar -xf archive.tar # -x for extracting 
+
+tar -cf item.tar /directory
+
+gzip item.tar
+
+gunzip item.tar.gz
