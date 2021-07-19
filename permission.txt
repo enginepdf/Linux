@@ -1,0 +1,8 @@
+chmod(Change Mode)
+
+    chmod u+rw
+    chmod g+rx
+    chmod a+r
+    chmod o=r
+
+    r(4)+w(2)+x(1)=7
